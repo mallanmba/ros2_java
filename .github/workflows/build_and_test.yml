@@ -35,7 +35,7 @@ jobs:
     - uses: ros-tooling/setup-ros@v0.2
       with:
         required-ros-distributions: ${{matrix.rosdistro}}
-    - uses: ros-tooling/action-ros-ci@master
+    - uses: ros-tooling/action-ros-ci@v0.2
       with:
         package-name: rosidl_generator_java rcljava_common rcljava
         target-ros2-distro: ${{matrix.rosdistro}}
