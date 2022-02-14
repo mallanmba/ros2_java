@@ -152,7 +152,7 @@ public final class TimeSource {
     ParameterType useSimTimeType = useSimTime.getType();
     if (useSimTimeType != ParameterType.PARAMETER_NOT_SET) {
       if (useSimTimeType == ParameterType.PARAMETER_BOOL) {
-        this.rosTimeIsActive = useSimTime.asBool();
+        this.setRosTimeIsActive(useSimTime.asBool());
       } else {
         logger.warn("The 'use_sim_time' parameter must be a boolean");
       }

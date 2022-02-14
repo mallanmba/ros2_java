@@ -78,19 +78,28 @@ public class TimeSourceTest {
   @Test
   public final void testAttachNodeUseSimTimeFalse() {
     when(mockedNode.getParameter("use_sim_time")).thenReturn(new ParameterVariant("use_sim_time", false));
+    when(mockedClock.getClockType()).thenReturn(ClockType.ROS_TIME);
 
     TimeSource timeSource = new TimeSource();
+    // An attached clock should be notified of the 'use_sim_time' value
+    timeSource.attachClock(mockedClock);
     timeSource.attachNode(mockedNode);
     assertFalse(timeSource.getRosTimeIsActive());
+    verify(mockedClock).setRosTimeIsActive(false);
   }
 
   @Test
   public final void testAttachNodeUseSimTimeTrue() {
     when(mockedNode.getParameter("use_sim_time")).thenReturn(new ParameterVariant("use_sim_time", true));
+    when(mockedClock.getClockType()).thenReturn(ClockType.ROS_TIME);
 
     TimeSource timeSource = new TimeSource();
+    // An attached clock should be notified of the 'use_sim_time' value
+    timeSource.attachClock(mockedClock);
     timeSource.attachNode(mockedNode);
     assertTrue(timeSource.getRosTimeIsActive());
+
+    verify(mockedClock).setRosTimeIsActive(true);
   }
 
   @Test
