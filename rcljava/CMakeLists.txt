@@ -7,6 +7,7 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_export_jars REQUIRED)
 find_package(ament_cmake_export_jni_libraries REQUIRED)
 find_package(builtin_interfaces REQUIRED)
+find_package(rcpputils REQUIRED)
 find_package(rcl REQUIRED)
 find_package(rcl_action REQUIRED)
 find_package(rcl_interfaces REQUIRED)
@@ -110,6 +111,7 @@ foreach(_jni_source ${${PROJECT_NAME}_jni_sources})
   ament_target_dependencies(${_target_name}
     "action_msgs"
     "builtin_interfaces"
+    "rcpputils"
     "rcl"
     "rcl_action"
     "rcl_interfaces"
