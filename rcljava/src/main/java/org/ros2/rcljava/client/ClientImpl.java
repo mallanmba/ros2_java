@@ -158,8 +158,9 @@ public class ClientImpl<T extends ServiceDefinition> implements Client<T> {
         callback.accept(future);
         return;
       }
-      throw new IllegalStateException(
-          "No request made with the given sequence number: " + sequenceNumber);
+      logger.debug(
+          "No request made with the given sequence number [" + sequenceNumber +
+          "] to service [" + this.serviceName + "].");
     }
   }
 
