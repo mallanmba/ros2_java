@@ -34,6 +34,7 @@ import org.ros2.rcljava.consumers.Consumer;
 import org.ros2.rcljava.RCLJava;
 import org.ros2.rcljava.node.Node;
 import org.ros2.rcljava.parameters.ParameterVariant;
+import org.ros2.rcljava.qos.QoSProfile;
 import org.ros2.rcljava.subscription.Subscription;
 import org.ros2.rcljava.time.TimeSource;
 
@@ -178,7 +179,7 @@ public class TimeSourceTest {
   @Test
   public final void testSetRosTimeIsActiveWithNode() {
     when(mockedNode.getParameter("use_sim_time")).thenReturn(new ParameterVariant("use_sim_time", false));
-    when(mockedNode.createSubscription(eq(rosgraph_msgs.msg.Clock.class), anyString(), any(Consumer.class)))
+    when(mockedNode.createSubscription(eq(rosgraph_msgs.msg.Clock.class), anyString(), any(Consumer.class), any(QoSProfile.class)))
       .thenReturn(mockSubscription);
 
     TimeSource timeSource = new TimeSource(mockedNode);
@@ -187,7 +188,8 @@ public class TimeSourceTest {
     timeSource.setRosTimeIsActive(true);
     assertTrue(timeSource.getRosTimeIsActive());
     // Expect subscription for the "/clock" topic when set active
-    verify(mockedNode).createSubscription(eq(rosgraph_msgs.msg.Clock.class), eq("/clock"), any(Consumer.class));
+    verify(mockedNode).createSubscription(
+      eq(rosgraph_msgs.msg.Clock.class), eq("/clock"), any(Consumer.class), any(QoSProfile.class));
     timeSource.setRosTimeIsActive(false);
     assertFalse(timeSource.getRosTimeIsActive());
     // Expect subscription removed when set not active

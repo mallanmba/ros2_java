@@ -20,6 +20,7 @@ import org.ros2.rcljava.node.Node;
 import org.ros2.rcljava.parameters.ParameterCallback;
 import org.ros2.rcljava.parameters.ParameterType;
 import org.ros2.rcljava.parameters.ParameterVariant;
+import org.ros2.rcljava.qos.QoSProfile;
 import org.ros2.rcljava.subscription.Subscription;
 import org.ros2.rcljava.time.Clock;
 import org.ros2.rcljava.time.ClockType;
@@ -119,7 +120,9 @@ public final class TimeSource {
     }
     if (enabled) {
       if (this.node != null) {
-        this.clockSub = node.<rosgraph_msgs.msg.Clock>createSubscription(rosgraph_msgs.msg.Clock.class, "/clock", new SubscriptionCallback(this));
+        QoSProfile qos = QoSProfile.sensorData().setDepth(1);
+        this.clockSub = node.<rosgraph_msgs.msg.Clock>createSubscription(
+          rosgraph_msgs.msg.Clock.class, "/clock", new SubscriptionCallback(this), qos);
       }
     } else {
       if (this.node != null && this.clockSub != null) {
