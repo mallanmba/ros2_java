@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         rosdistro: [rolling]
-        os: [ubuntu-20.04]
+        os: [ubuntu-22.04]
         java_version: [6, default]
         include:
           - java_version: 6
@@ -32,8 +32,9 @@ jobs:
         sudo apt update -qq
         sudo apt install -y default-jdk
     - uses: actions/checkout@v2
-    - uses: ros-tooling/setup-ros@v0.2
+    - uses: ros-tooling/setup-ros@v0.4
       with:
+        use-ros2-testing: true
         required-ros-distributions: ${{matrix.rosdistro}}
     - uses: ros-tooling/action-ros-ci@v0.2
       with:

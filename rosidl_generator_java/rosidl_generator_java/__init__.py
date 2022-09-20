@@ -204,4 +204,4 @@ def get_jni_signature(type_):
 def get_jni_mangled_name(fully_qualified_name):
     # JNI name mangling:
     # https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/design.html#resolving_native_method_names
-    return '_'.join(list(map(lambda name: name.replace('_', '_1'), fully_qualified_name)))
+    return '_'.join(name.replace('_', '_1') for name in fully_qualified_name)

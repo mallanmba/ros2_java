@@ -15,6 +15,7 @@ find_package(rcljava_common REQUIRED)
 find_package(rmw REQUIRED)
 find_package(rmw_implementation_cmake REQUIRED)
 find_package(rosgraph_msgs REQUIRED)
+find_package(rosidl_cmake)
 find_package(unique_identifier_msgs REQUIRED)
 
 include(CrossCompilingExtra)
