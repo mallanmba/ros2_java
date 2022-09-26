@@ -87,36 +87,36 @@ public class InterfacesTest {
     public List<String> stringList = Arrays.asList(stringArr);
     public String[] stringArrShort = new String[]{"max_value", ""};
     public List<String> stringListShort = Arrays.asList(stringArrShort);
-    private rosidl_generator_java.msg.BasicTypes basicTypes = new rosidl_generator_java.msg.BasicTypes();
-    public rosidl_generator_java.msg.BasicTypes[] basicTypesArr =
-        new rosidl_generator_java.msg.BasicTypes[] {basicTypes, basicTypes, basicTypes};
-    public List<rosidl_generator_java.msg.BasicTypes> basicTypesList = Arrays.asList(basicTypesArr);
-    public rosidl_generator_java.msg.BasicTypes[] basicTypesArrShort =
-        new rosidl_generator_java.msg.BasicTypes[] {basicTypes};
-    public List<rosidl_generator_java.msg.BasicTypes> basicTypesListShort = Arrays.asList(basicTypesArrShort);
-    public rosidl_generator_java.msg.BasicTypes[] basicTypesArrLong =
-        new rosidl_generator_java.msg.BasicTypes[] {basicTypes, basicTypes, basicTypes, basicTypes};
-    public List<rosidl_generator_java.msg.BasicTypes> basicTypesListLong = Arrays.asList(basicTypesArrLong);
-    private rosidl_generator_java.msg.Constants constants = new rosidl_generator_java.msg.Constants();
-    public rosidl_generator_java.msg.Constants[] constantsArr =
-        new rosidl_generator_java.msg.Constants[] {constants, constants, constants};
-    public List<rosidl_generator_java.msg.Constants> constantsList = Arrays.asList(constantsArr);
-    public rosidl_generator_java.msg.Constants[] constantsArrShort =
-        new rosidl_generator_java.msg.Constants[] {constants};
-    public List<rosidl_generator_java.msg.Constants> constantsListShort = Arrays.asList(constantsArrShort);
-    public rosidl_generator_java.msg.Constants[] constantsArrLong =
-        new rosidl_generator_java.msg.Constants[] {constants, constants, constants, constants};
-    public List<rosidl_generator_java.msg.Constants> constantsListLong = Arrays.asList(constantsArrLong);
-    private rosidl_generator_java.msg.Defaults defaults = new rosidl_generator_java.msg.Defaults();
-    public rosidl_generator_java.msg.Defaults[] defaultsArr =
-        new rosidl_generator_java.msg.Defaults[] {defaults, defaults, defaults};
-    public List<rosidl_generator_java.msg.Defaults> defaultsList = Arrays.asList(defaultsArr);
-    public rosidl_generator_java.msg.Defaults[] defaultsArrShort =
-        new rosidl_generator_java.msg.Defaults[] {defaults};
-    public List<rosidl_generator_java.msg.Defaults> defaultsListShort = Arrays.asList(defaultsArrShort);
-    public rosidl_generator_java.msg.Defaults[] defaultsArrLong =
-        new rosidl_generator_java.msg.Defaults[] {defaults, defaults, defaults, defaults};
-    public List<rosidl_generator_java.msg.Defaults> defaultsListLong = Arrays.asList(defaultsArrLong);
+    private test_rosidl_generator_java.msg.BasicTypes basicTypes = new test_rosidl_generator_java.msg.BasicTypes();
+    public test_rosidl_generator_java.msg.BasicTypes[] basicTypesArr =
+        new test_rosidl_generator_java.msg.BasicTypes[] {basicTypes, basicTypes, basicTypes};
+    public List<test_rosidl_generator_java.msg.BasicTypes> basicTypesList = Arrays.asList(basicTypesArr);
+    public test_rosidl_generator_java.msg.BasicTypes[] basicTypesArrShort =
+        new test_rosidl_generator_java.msg.BasicTypes[] {basicTypes};
+    public List<test_rosidl_generator_java.msg.BasicTypes> basicTypesListShort = Arrays.asList(basicTypesArrShort);
+    public test_rosidl_generator_java.msg.BasicTypes[] basicTypesArrLong =
+        new test_rosidl_generator_java.msg.BasicTypes[] {basicTypes, basicTypes, basicTypes, basicTypes};
+    public List<test_rosidl_generator_java.msg.BasicTypes> basicTypesListLong = Arrays.asList(basicTypesArrLong);
+    private test_rosidl_generator_java.msg.Constants constants = new test_rosidl_generator_java.msg.Constants();
+    public test_rosidl_generator_java.msg.Constants[] constantsArr =
+        new test_rosidl_generator_java.msg.Constants[] {constants, constants, constants};
+    public List<test_rosidl_generator_java.msg.Constants> constantsList = Arrays.asList(constantsArr);
+    public test_rosidl_generator_java.msg.Constants[] constantsArrShort =
+        new test_rosidl_generator_java.msg.Constants[] {constants};
+    public List<test_rosidl_generator_java.msg.Constants> constantsListShort = Arrays.asList(constantsArrShort);
+    public test_rosidl_generator_java.msg.Constants[] constantsArrLong =
+        new test_rosidl_generator_java.msg.Constants[] {constants, constants, constants, constants};
+    public List<test_rosidl_generator_java.msg.Constants> constantsListLong = Arrays.asList(constantsArrLong);
+    private test_rosidl_generator_java.msg.Defaults defaults = new test_rosidl_generator_java.msg.Defaults();
+    public test_rosidl_generator_java.msg.Defaults[] defaultsArr =
+        new test_rosidl_generator_java.msg.Defaults[] {defaults, defaults, defaults};
+    public List<test_rosidl_generator_java.msg.Defaults> defaultsList = Arrays.asList(defaultsArr);
+    public test_rosidl_generator_java.msg.Defaults[] defaultsArrShort =
+        new test_rosidl_generator_java.msg.Defaults[] {defaults};
+    public List<test_rosidl_generator_java.msg.Defaults> defaultsListShort = Arrays.asList(defaultsArrShort);
+    public test_rosidl_generator_java.msg.Defaults[] defaultsArrLong =
+        new test_rosidl_generator_java.msg.Defaults[] {defaults, defaults, defaults, defaults};
+    public List<test_rosidl_generator_java.msg.Defaults> defaultsListLong = Arrays.asList(defaultsArrLong);
   }
 
   @BeforeClass
@@ -153,14 +153,14 @@ public class InterfacesTest {
 
   @Test
   public final void testEmpty() {
-    rosidl_generator_java.msg.Empty empty = new rosidl_generator_java.msg.Empty();
+    test_rosidl_generator_java.msg.Empty empty = new test_rosidl_generator_java.msg.Empty();
     assertNotEquals(null, empty);
   }
 
   @Test
   public final void testBasicTypes() {
     // Test setting/getting positive values
-    rosidl_generator_java.msg.BasicTypes basicTypesOne = new rosidl_generator_java.msg.BasicTypes();
+    test_rosidl_generator_java.msg.BasicTypes basicTypesOne = new test_rosidl_generator_java.msg.BasicTypes();
     boolean expectedBool1 = true;
     basicTypesOne.setBoolValue(expectedBool1);
     byte expectedByte1 = 123;
@@ -191,7 +191,7 @@ public class InterfacesTest {
     assertEquals(expectedInt641, basicTypesOne.getInt64Value());
 
     // Test setting/getting negative values
-    rosidl_generator_java.msg.BasicTypes basicTypesTwo = new rosidl_generator_java.msg.BasicTypes();
+    test_rosidl_generator_java.msg.BasicTypes basicTypesTwo = new test_rosidl_generator_java.msg.BasicTypes();
     boolean expectedBool2 = false;
     basicTypesTwo.setBoolValue(expectedBool2);
     byte expectedByte2 = -42;
@@ -224,26 +224,26 @@ public class InterfacesTest {
 
   @Test
   public final void testConstants() {
-    assertEquals(true, rosidl_generator_java.msg.Constants.BOOL_CONST);
-    assertEquals(50, rosidl_generator_java.msg.Constants.BYTE_CONST);
-    assertEquals(100, rosidl_generator_java.msg.Constants.CHAR_CONST);
-    assertEquals(1.125f, rosidl_generator_java.msg.Constants.FLOAT32_CONST, 0.01f);
-    assertEquals(1.125, rosidl_generator_java.msg.Constants.FLOAT64_CONST, 0.01);
-    assertEquals(-50, rosidl_generator_java.msg.Constants.INT8_CONST);
-    assertEquals((byte) 200, rosidl_generator_java.msg.Constants.UINT8_CONST);
-    assertEquals(-1000, rosidl_generator_java.msg.Constants.INT16_CONST);
-    assertEquals(2000, rosidl_generator_java.msg.Constants.UINT16_CONST);
-    assertEquals(-30000, rosidl_generator_java.msg.Constants.INT32_CONST);
-    assertEquals(60000, rosidl_generator_java.msg.Constants.UINT32_CONST);
-    assertEquals(-40000000, rosidl_generator_java.msg.Constants.INT64_CONST);
-    assertEquals(50000000, rosidl_generator_java.msg.Constants.UINT64_CONST);
+    assertEquals(true, test_rosidl_generator_java.msg.Constants.BOOL_CONST);
+    assertEquals(50, test_rosidl_generator_java.msg.Constants.BYTE_CONST);
+    assertEquals(100, test_rosidl_generator_java.msg.Constants.CHAR_CONST);
+    assertEquals(1.125f, test_rosidl_generator_java.msg.Constants.FLOAT32_CONST, 0.01f);
+    assertEquals(1.125, test_rosidl_generator_java.msg.Constants.FLOAT64_CONST, 0.01);
+    assertEquals(-50, test_rosidl_generator_java.msg.Constants.INT8_CONST);
+    assertEquals((byte) 200, test_rosidl_generator_java.msg.Constants.UINT8_CONST);
+    assertEquals(-1000, test_rosidl_generator_java.msg.Constants.INT16_CONST);
+    assertEquals(2000, test_rosidl_generator_java.msg.Constants.UINT16_CONST);
+    assertEquals(-30000, test_rosidl_generator_java.msg.Constants.INT32_CONST);
+    assertEquals(60000, test_rosidl_generator_java.msg.Constants.UINT32_CONST);
+    assertEquals(-40000000, test_rosidl_generator_java.msg.Constants.INT64_CONST);
+    assertEquals(50000000, test_rosidl_generator_java.msg.Constants.UINT64_CONST);
 
-    assertEquals("Hello world!", rosidl_generator_java.msg.Strings.STRING_CONST);
+    assertEquals("Hello world!", test_rosidl_generator_java.msg.Strings.STRING_CONST);
   }
 
   @Test
   public final void testDefaultValues() {
-    rosidl_generator_java.msg.Defaults defaults = new rosidl_generator_java.msg.Defaults();
+    test_rosidl_generator_java.msg.Defaults defaults = new test_rosidl_generator_java.msg.Defaults();
     assertEquals(true, defaults.getBoolValue());
     assertEquals(50, defaults.getByteValue());
     assertEquals(100, defaults.getCharValue());
@@ -258,7 +258,7 @@ public class InterfacesTest {
     assertEquals(-40000000, defaults.getInt64Value());
     assertEquals(50000000, defaults.getUint64Value());
 
-    rosidl_generator_java.msg.Strings strings = new rosidl_generator_java.msg.Strings();
+    test_rosidl_generator_java.msg.Strings strings = new test_rosidl_generator_java.msg.Strings();
     assertEquals("Hello world!", strings.getStringValueDefault1());
     assertEquals("Hello'world!", strings.getStringValueDefault2());
     assertEquals("Hello\"world!", strings.getStringValueDefault3());
@@ -273,7 +273,7 @@ public class InterfacesTest {
 
   @Test
   public final void testCheckStringConstraints() {
-    rosidl_generator_java.msg.Strings strings = new rosidl_generator_java.msg.Strings();
+    test_rosidl_generator_java.msg.Strings strings = new test_rosidl_generator_java.msg.Strings();
     strings.setStringValue("test");
     assertEquals("test", strings.getStringValue());
 
@@ -293,7 +293,7 @@ public class InterfacesTest {
 
   @Test
   public final void testArrays() {
-    final rosidl_generator_java.msg.Arrays arrays = new rosidl_generator_java.msg.Arrays();
+    final test_rosidl_generator_java.msg.Arrays arrays = new test_rosidl_generator_java.msg.Arrays();
     final ListFixtureData fixture = new ListFixtureData();
 
     // This value should not change and is asserted at end of test
@@ -599,7 +599,7 @@ public class InterfacesTest {
 
   @Test
   public final void testBoundedSequences() {
-    final rosidl_generator_java.msg.BoundedSequences bounded_seq = new rosidl_generator_java.msg.BoundedSequences();
+    final test_rosidl_generator_java.msg.BoundedSequences bounded_seq = new test_rosidl_generator_java.msg.BoundedSequences();
     final ListFixtureData fixture = new ListFixtureData();
 
     // This value should not change and is asserted at end of test
@@ -949,7 +949,7 @@ public class InterfacesTest {
 
   @Test
   public final void testUnboundedSequences() {
-    rosidl_generator_java.msg.UnboundedSequences unbounded_seq = new rosidl_generator_java.msg.UnboundedSequences();
+    test_rosidl_generator_java.msg.UnboundedSequences unbounded_seq = new test_rosidl_generator_java.msg.UnboundedSequences();
     ListFixtureData fixture = new ListFixtureData();
 
     // This value should not change and is asserted at end of test
@@ -1017,10 +1017,10 @@ public class InterfacesTest {
 
   @Test
   public final void testBasicTypesService() {
-    rosidl_generator_java.srv.BasicTypes_Request basicTypesRequest =
-      new rosidl_generator_java.srv.BasicTypes_Request();
-    rosidl_generator_java.srv.BasicTypes_Response basicTypesResponse =
-      new rosidl_generator_java.srv.BasicTypes_Response();
+    test_rosidl_generator_java.srv.BasicTypes_Request basicTypesRequest =
+      new test_rosidl_generator_java.srv.BasicTypes_Request();
+    test_rosidl_generator_java.srv.BasicTypes_Response basicTypesResponse =
+      new test_rosidl_generator_java.srv.BasicTypes_Response();
     // Set request fields
     boolean expectedBool1 = true;
     basicTypesRequest.setBoolValue(expectedBool1);
@@ -1083,4 +1083,108 @@ public class InterfacesTest {
     assertEquals(expectedInt322, basicTypesResponse.getInt32Value());
     assertEquals(expectedInt642, basicTypesResponse.getInt64Value());
   }
+
+  @Test
+  public final void testBasicTypesAction() {
+    test_rosidl_generator_java.action.BasicTypes_Goal basicTypesGoal =
+      new test_rosidl_generator_java.action.BasicTypes_Goal();
+    test_rosidl_generator_java.action.BasicTypes_Feedback basicTypesFeedback =
+      new test_rosidl_generator_java.action.BasicTypes_Feedback();
+    test_rosidl_generator_java.action.BasicTypes_Result basicTypesResult =
+      new test_rosidl_generator_java.action.BasicTypes_Result();
+
+    // Set goal fields
+    boolean expectedBool1 = true;
+    basicTypesGoal.setBoolValue(expectedBool1);
+    byte expectedByte1 = 123;
+    basicTypesGoal.setByteValue(expectedByte1);
+    byte expectedChar1 = 'a';
+    basicTypesGoal.setCharValue(expectedChar1);
+    float expectedFloat1 = 12.34f;
+    basicTypesGoal.setFloat32Value(expectedFloat1);
+    double expectedDouble1 = 12.34;
+    basicTypesGoal.setFloat64Value(expectedDouble1);
+    byte expectedInt81 = 123;
+    basicTypesGoal.setInt8Value(expectedInt81);
+    short expectedInt161 = 1230;
+    basicTypesGoal.setInt16Value(expectedInt161);
+    int expectedInt321 = 123000;
+    basicTypesGoal.setInt32Value(expectedInt321);
+    long expectedInt641 = 42949672960L;
+    basicTypesGoal.setInt64Value(expectedInt641);
+
+    // Set feedback fields
+    boolean expectedBool2 = false;
+    basicTypesFeedback.setBoolValue(expectedBool2);
+    byte expectedByte2 = -42;
+    basicTypesFeedback.setByteValue(expectedByte2);
+    byte expectedChar2 = ' ';
+    basicTypesFeedback.setCharValue(expectedChar2);
+    float expectedFloat2 = -43.21f;
+    basicTypesFeedback.setFloat32Value(expectedFloat2);
+    double expectedDouble2 = -43.21;
+    basicTypesFeedback.setFloat64Value(expectedDouble2);
+    byte expectedInt82 = -42;
+    basicTypesFeedback.setInt8Value(expectedInt82);
+    short expectedInt162 = -420;
+    basicTypesFeedback.setInt16Value(expectedInt162);
+    int expectedInt322 = -42000;
+    basicTypesFeedback.setInt32Value(expectedInt322);
+    long expectedInt642 = -4200000L;
+    basicTypesFeedback.setInt64Value(expectedInt642);
+
+    // Set result fields
+    boolean expectedBool3 = false;
+    basicTypesResult.setBoolValue(expectedBool3);
+    byte expectedByte3 = -1;
+    basicTypesResult.setByteValue(expectedByte3);
+    byte expectedChar3 = '?';
+    basicTypesResult.setCharValue(expectedChar3);
+    float expectedFloat3 = 3.14f;
+    basicTypesResult.setFloat32Value(expectedFloat3);
+    double expectedDouble3 = 1.618;
+    basicTypesResult.setFloat64Value(expectedDouble3);
+    byte expectedInt83 = 42;
+    basicTypesResult.setInt8Value(expectedInt83);
+    short expectedInt163 = 420;
+    basicTypesResult.setInt16Value(expectedInt163);
+    int expectedInt323 = 42000;
+    basicTypesResult.setInt32Value(expectedInt323);
+    long expectedInt643 = 4200000L;
+    basicTypesResult.setInt64Value(expectedInt643);
+
+    // Get goal fields
+    assertEquals(expectedBool1, basicTypesGoal.getBoolValue());
+    assertEquals(expectedByte1, basicTypesGoal.getByteValue());
+    assertEquals(expectedChar1, basicTypesGoal.getCharValue());
+    assertEquals(expectedFloat1, basicTypesGoal.getFloat32Value(), 0.01f);
+    assertEquals(expectedDouble1, basicTypesGoal.getFloat64Value(), 0.01);
+    assertEquals(expectedInt81, basicTypesGoal.getInt8Value());
+    assertEquals(expectedInt161, basicTypesGoal.getInt16Value());
+    assertEquals(expectedInt321, basicTypesGoal.getInt32Value());
+    assertEquals(expectedInt641, basicTypesGoal.getInt64Value());
+
+    // Get feedback fields
+    assertEquals(expectedBool2, basicTypesFeedback.getBoolValue());
+    assertEquals(expectedByte2, basicTypesFeedback.getByteValue());
+    assertEquals(expectedChar2, basicTypesFeedback.getCharValue());
+    assertEquals(expectedFloat2, basicTypesFeedback.getFloat32Value(), 0.01f);
+    assertEquals(expectedDouble2, basicTypesFeedback.getFloat64Value(), 0.01);
+    assertEquals(expectedInt82, basicTypesFeedback.getInt8Value());
+    assertEquals(expectedInt162, basicTypesFeedback.getInt16Value());
+    assertEquals(expectedInt322, basicTypesFeedback.getInt32Value());
+    assertEquals(expectedInt642, basicTypesFeedback.getInt64Value());
+
+    // Get result fields
+    assertEquals(expectedBool3, basicTypesResult.getBoolValue());
+    assertEquals(expectedByte3, basicTypesResult.getByteValue());
+    assertEquals(expectedChar3, basicTypesResult.getCharValue());
+    assertEquals(expectedFloat3, basicTypesResult.getFloat32Value(), 0.01f);
+    assertEquals(expectedDouble3, basicTypesResult.getFloat64Value(), 0.01);
+    assertEquals(expectedInt83, basicTypesResult.getInt8Value());
+    assertEquals(expectedInt163, basicTypesResult.getInt16Value());
+    assertEquals(expectedInt323, basicTypesResult.getInt32Value());
+    assertEquals(expectedInt643, basicTypesResult.getInt64Value());
+  }
+
 }
