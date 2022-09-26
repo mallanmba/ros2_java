@@ -15,7 +15,6 @@
 find_package(ament_cmake_export_jars REQUIRED)
 find_package(ament_cmake_export_jni_libraries REQUIRED)
 find_package(rosidl_generator_c REQUIRED)
-find_package(rmw_implementation_cmake REQUIRED)
 find_package(rmw REQUIRED)
 find_package(rcljava_common REQUIRED)
 
