@@ -1187,4 +1187,34 @@ public class InterfacesTest {
     assertEquals(expectedInt643, basicTypesResult.getInt64Value());
   }
 
+  @Test
+  public final void testNestedAction() {
+    test_rosidl_generator_java.action.Nested_Goal nestedGoal =
+      new test_rosidl_generator_java.action.Nested_Goal();
+    test_rosidl_generator_java.action.Nested_Feedback nestedFeedback =
+      new test_rosidl_generator_java.action.Nested_Feedback();
+    test_rosidl_generator_java.action.Nested_Result nestedResult =
+      new test_rosidl_generator_java.action.Nested_Result();
+
+    // Set goal field
+    int expectedInt32Goal = 123;
+    nestedGoal.getNestedValue().getBasicTypesValue().setInt32Value(expectedInt32Goal);
+
+    // Set feedback field
+    int expectedInt32Feedback = 231;
+    nestedFeedback.getNestedValue().getBasicTypesValue().setInt32Value(expectedInt32Feedback);
+
+    // Set result field
+    int expectedInt32Result = 132;
+    nestedResult.getNestedValue().getBasicTypesValue().setInt32Value(expectedInt32Result);
+
+    // Get fields
+    assertEquals(
+      expectedInt32Goal, nestedGoal.getNestedValue().getBasicTypesValue().getInt32Value());
+    assertEquals(
+      expectedInt32Feedback, nestedFeedback.getNestedValue().getBasicTypesValue().getInt32Value());
+    assertEquals(
+      expectedInt32Result, nestedResult.getNestedValue().getBasicTypesValue().getInt32Value());
+  }
+
 }

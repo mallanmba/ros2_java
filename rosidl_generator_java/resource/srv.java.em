@@ -18,7 +18,8 @@ data = {
     'interface_path': interface_path,
     'output_dir': output_dir,
     'template_basepath': template_basepath,
-    'marker_interfaces': [],
+    'imports': [],
+    'implements': [],
 }
 data.update({'message': service.request_message})
 output_file = os.path.join(output_dir, *namespaces[1:], request_type_name + '.java')

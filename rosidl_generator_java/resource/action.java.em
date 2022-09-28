@@ -10,6 +10,7 @@ from rosidl_cmake import expand_template
 
 namespaces = action.namespaced_type.namespaces
 type_name = action.namespaced_type.name
+fully_qualified_type_name = '.'.join(namespaces + [type_name])
 goal_type_name = action.goal.structure.namespaced_type.name
 result_type_name = action.result.structure.namespaced_type.name
 feedback_type_name = action.feedback.structure.namespaced_type.name
@@ -25,7 +26,8 @@ data = {
 }
 data.update({
   'message': action.goal,
-  'marker_interfaces': [f'org.ros2.rcljava.interfaces.GoalDefinition<{type_name}>'],
+  'imports': ['org.ros2.rcljava.interfaces.GoalDefinition'],
+  'implements': [f'GoalDefinition<{fully_qualified_type_name}>'],
 })
 output_file = os.path.join(output_dir, *namespaces[1:], goal_type_name + '.java')
 expand_template(
@@ -36,7 +38,8 @@ expand_template(
 
 data.update({
   'message': action.result,
-  'marker_interfaces': [f'org.ros2.rcljava.interfaces.ResultDefinition<{type_name}>'],
+  'imports': ['org.ros2.rcljava.interfaces.ResultDefinition'],
+  'implements': [f'ResultDefinition<{fully_qualified_type_name}>'],
 })
 output_file = os.path.join(output_dir, *namespaces[1:], result_type_name + '.java')
 expand_template(
@@ -47,7 +50,8 @@ expand_template(
 
 data.update({
   'message': action.feedback,
-  'marker_interfaces': [f'org.ros2.rcljava.interfaces.FeedbackDefinition<{type_name}>'],
+  'imports': ['org.ros2.rcljava.interfaces.FeedbackDefinition'],
+  'implements': [f'FeedbackDefinition<{fully_qualified_type_name}>'],
 })
 output_file = os.path.join(output_dir, *namespaces[1:], feedback_type_name + '.java')
 expand_template(
@@ -58,7 +62,8 @@ expand_template(
 
 data.update({
   'message': action.feedback_message,
-  'marker_interfaces': [],
+  'imports': [],
+  'implements': [],
 })
 output_file = os.path.join(output_dir, *namespaces[1:], feedback_message_type_name + '.java')
 expand_template(
@@ -67,7 +72,8 @@ expand_template(
     output_file,
     template_basepath=template_basepath)
 
-del data['marker_interfaces']
+del data['imports']
+del data['implements']
 del data['message']
 data.update({'service': action.send_goal_service})
 output_file = os.path.join(output_dir, *namespaces[1:], send_goal_type_name + '.java')
@@ -109,13 +115,13 @@ import @(action_import);
 
 public class @(type_name) implements ActionDefinition {
 
-  public static class SendGoalRequest extends @(type_name)_SendGoal_Request implements GoalRequestDefinition<@(type_name)> {
+  public static class SendGoalRequest extends @(type_name)_SendGoal_Request implements GoalRequestDefinition<@(fully_qualified_type_name)> {
     public List<Byte> getGoalUuid() {
       return super.getGoalId().getUuidAsList();
     }
   }
 
-  public static class SendGoalResponse extends @(type_name)_SendGoal_Response implements GoalResponseDefinition<@(type_name)> {
+  public static class SendGoalResponse extends @(type_name)_SendGoal_Response implements GoalResponseDefinition<@(fully_qualified_type_name)> {
     public void accept(boolean accepted) {
       super.setAccepted(accepted);
     }
@@ -128,14 +134,14 @@ public class @(type_name) implements ActionDefinition {
     }
   }
 
-  public static class GetResultRequest extends @(type_name)_GetResult_Request implements ResultRequestDefinition<@(type_name)> {
+  public static class GetResultRequest extends @(type_name)_GetResult_Request implements ResultRequestDefinition<@(fully_qualified_type_name)> {
     public List<Byte> getGoalUuid() {
       return super.getGoalId().getUuidAsList();
     }
   }
 
-  public static class GetResultResponse extends @(type_name)_GetResult_Response implements ResultResponseDefinition<@(type_name)> {
-    public void setResult(ResultDefinition<@(type_name)> result) {
+  public static class GetResultResponse extends @(type_name)_GetResult_Response implements ResultResponseDefinition<@(fully_qualified_type_name)> {
+    public void setResult(ResultDefinition<@(fully_qualified_type_name)> result) {
       super.setResult((@(type_name)_Result)result);
     }
     public void setGoalStatus(byte status) {
@@ -143,8 +149,8 @@ public class @(type_name) implements ActionDefinition {
     }
   }
 
-  public static class FeedbackMessage extends @(type_name)_FeedbackMessage implements FeedbackMessageDefinition<@(type_name)> {
-    public void setFeedback(FeedbackDefinition<@(type_name)> feedback) {
+  public static class FeedbackMessage extends @(type_name)_FeedbackMessage implements FeedbackMessageDefinition<@(fully_qualified_type_name)> {
+    public void setFeedback(FeedbackDefinition<@(fully_qualified_type_name)> feedback) {
       super.setFeedback((@(type_name)_Feedback) feedback);
     }
     public void setGoalUuid(List<Byte> goalUuid) {
@@ -152,39 +158,39 @@ public class @(type_name) implements ActionDefinition {
     }
   }
 
-  public Class<? extends GoalRequestDefinition<@(type_name)>> getSendGoalRequestType() {
+  public Class<? extends GoalRequestDefinition<@(fully_qualified_type_name)>> getSendGoalRequestType() {
     return SendGoalRequest.class;
   }
 
-  public Class<? extends GoalResponseDefinition<@(type_name)>> getSendGoalResponseType() {
+  public Class<? extends GoalResponseDefinition<@(fully_qualified_type_name)>> getSendGoalResponseType() {
     return SendGoalResponse.class;
   }
 
-  public Class<? extends ResultRequestDefinition<@(type_name)>> getGetResultRequestType() {
+  public Class<? extends ResultRequestDefinition<@(fully_qualified_type_name)>> getGetResultRequestType() {
     return GetResultRequest.class;
   }
 
-  public Class<? extends ResultResponseDefinition<@(type_name)>> getGetResultResponseType() {
+  public Class<? extends ResultResponseDefinition<@(fully_qualified_type_name)>> getGetResultResponseType() {
     return GetResultResponse.class;
   }
 
-  public Class<? extends ResultDefinition<@(type_name)>> getResultType() {
+  public Class<? extends ResultDefinition<@(fully_qualified_type_name)>> getResultType() {
     return @(type_name)_Result.class;
   }
 
-  public Class<? extends FeedbackDefinition<@(type_name)>> getFeedbackType() {
+  public Class<? extends FeedbackDefinition<@(fully_qualified_type_name)>> getFeedbackType() {
     return @(type_name)_Feedback.class;
   }
 
-  public Class<? extends FeedbackMessageDefinition<@(type_name)>> getFeedbackMessageType() {
+  public Class<? extends FeedbackMessageDefinition<@(fully_qualified_type_name)>> getFeedbackMessageType() {
     return FeedbackMessage.class;
   }
 
-  private static final Logger logger = LoggerFactory.getLogger(@(type_name).class);
+  private static final Logger logger = LoggerFactory.getLogger(@(fully_qualified_type_name).class);
 
   static {
     try {
-      JNIUtils.loadTypesupport(@(type_name).class);
+      JNIUtils.loadTypesupport(@(fully_qualified_type_name).class);
     } catch (UnsatisfiedLinkError ule) {
       logger.error("Native code library failed to load.\n" + ule);
       System.exit(1);

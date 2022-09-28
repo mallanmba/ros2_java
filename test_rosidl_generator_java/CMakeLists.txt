@@ -20,6 +20,7 @@ if(BUILD_TESTING)
     ${test_interface_files_MSG_FILES}
     ${test_interface_files_SRV_FILES}
     action/BasicTypes.action
+    action/Nested.action
     SKIP_INSTALL
   )
 
