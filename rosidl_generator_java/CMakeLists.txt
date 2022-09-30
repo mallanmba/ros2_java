@@ -9,7 +9,6 @@ find_package(rcljava_common REQUIRED)
 include(CrossCompilingExtra)
 
 ament_export_dependencies(ament_cmake)
-ament_export_dependencies(rosidl_cmake)
 
 ament_python_install_package(${PROJECT_NAME})
 

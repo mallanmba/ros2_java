@@ -17,13 +17,13 @@ from ast import literal_eval
 from collections import defaultdict
 import pathlib
 
-from rosidl_cmake import generate_files
-from rosidl_cmake import read_generator_arguments
 from rosidl_parser.definition import AbstractGenericString
 from rosidl_parser.definition import AbstractNestedType
 from rosidl_parser.definition import BASIC_TYPES
 from rosidl_parser.definition import BasicType
 from rosidl_parser.definition import NamespacedType
+from rosidl_pycommon import generate_files
+from rosidl_pycommon import read_generator_arguments
 
 
 # Taken from http://stackoverflow.com/a/6425628

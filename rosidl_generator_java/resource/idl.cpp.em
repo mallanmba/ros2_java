@@ -16,10 +16,10 @@
 @{
 import os
 
-from rosidl_cmake import expand_template
 from rosidl_parser.definition import Action
 from rosidl_parser.definition import Message
 from rosidl_parser.definition import Service
+from rosidl_pycommon import expand_template
 
 }@
 @
