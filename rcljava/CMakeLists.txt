@@ -31,6 +31,9 @@ endif()
 include(UseJava)
 include(JavaExtra)
 
+# Default to jdk 17
+set(CMAKE_JAVA_COMPILE_FLAGS "-source" "17" "-target" "17")
+
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
