@@ -31,6 +31,9 @@ endif()
 include(UseJava)
 include(JavaExtra)
 
+# Default to jdk 17
+set(CMAKE_JAVA_COMPILE_FLAGS "-target" "17")
+
 if(NOT WIN32)
   if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
