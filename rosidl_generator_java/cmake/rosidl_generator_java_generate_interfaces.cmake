@@ -32,7 +32,7 @@ include(UseJava)
 include(JavaExtra)
 
 # Default to jdk 17
-set(CMAKE_JAVA_COMPILE_FLAGS "-target" "17")
+set(CMAKE_JAVA_COMPILE_FLAGS "-source" "17" "-target" "17")
 
 if(NOT WIN32)
   if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
